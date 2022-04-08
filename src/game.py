@@ -1,23 +1,28 @@
 from typing import List
 import pygame as pg
 
-class wave:
-    GROUND = 0
-    TREASURE = 1
-    DEADLY = 2
-    WATER = 3
+import source as src
+
+# 角色类
+class character:
+    direct = [0.0, -1.0]# 角色行走的方向向量
+    feetl_img = pg.transform.scale(pg.image.load("{}{}/feet.png".format(src.source_menu, src.img_menu)), [8, 20])# 左脚脚印的图像
+    feetr_img = pg.transform.flip(feetl_img, True, False)# 翻转之后就是右脚
+    v = 10# 行走速度
     
-    MAXWIDTH = 10
+    def __init__(self) -> None:
+        pass
     
-    def __init__(self, position : List[int, int], maxBri, direction : List[int, int], decrement) -> None:
-        self.position = position
-        self.maxBri = maxBri
-        self.bright = maxBri
-        self.direction = direction
-        self.decrement = decrement
-        self.width = 10
-        self.widDecr = self.MAXWIDTH * self.maxBri / self.decrement
+    # 绘制脚印
+    def draw_feet(self, win : pg.Surface):
+        
+        ftl = pg.transform.rotate(self.feetl_img, 90)
+        ftr = self.feetr_img
+        
+        win.blit(ftl, [0, 0])
+        win.blit(ftr, [12, 0])
     
-    def refresh(self):
-        self.bright -= self.decrement
-        self.width -= self.widDecr
+    # 绘制角色
+    # 脚印、声波等
+    def draw(self, win : pg.Surface):
+        self.draw_feet(win)
