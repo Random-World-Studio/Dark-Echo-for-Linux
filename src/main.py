@@ -24,15 +24,15 @@ def draw_cur():  # 绘制鼠标特效
         return
 
     # 计算箭尾坐标
-    horiz = vector.get_horiz_v(direct, 16)
+    horiz = vector.get_horiz_v(direct, 22)
     negdir = vector.get_neg_v(direct)
-    negdir = vector.get_v(negdir, 18)
+    negdir = vector.get_v(negdir, 48)
     offset = vector.v_add(horiz, negdir)
     tail1 = vector.v_add(_game.get_mouse(), offset)
     _horiz = vector.get_neg_v(horiz)
     offset = vector.v_add(_horiz, negdir)
     tail2 = vector.v_add(_game.get_mouse(), offset)
-    rt = vector.v_sub(_game.get_mouse(), vector.get_v(negdir, 12))
+    rt = vector.v_add(_game.get_mouse(), vector.get_v(negdir, 18))
     pg.draw.polygon(win, [255, 255, 255], [
                     _game.get_mouse(), tail1, rt, tail2])
 
