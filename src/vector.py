@@ -5,6 +5,8 @@ def get_horiz_v(v, length):
 
 
 def get_v(v, length):
+    if get_mould(v) == 0:
+        return [0, 0]
     return [v[0] * length / math.sqrt(v[0]*v[0] + v[1]*v[1]), v[1] * length / math.sqrt(v[0]*v[0] + v[1]*v[1])]
 
 
