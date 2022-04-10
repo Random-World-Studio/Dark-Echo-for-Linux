@@ -5,10 +5,10 @@
 Map file consists of apex structs.
 The maps must ensure that all the apexes will enclose some closed figures.
 the struct has members as follows:
-1. identifer : int
+1. identifier : int
 2. coordinate : `[float, float]`
 3. adjactApex : `[int, int]`  
-    adjactApex[0] is the last apex' identifer, sdjact[1] is the next apex's identifer
+    adjactApex[0] is the last apex's identifier, adjact[1] is the next apex's identifier
 4. arcEnable : `bool`  
     this enables items 5 6 and 7
 5. center : `float`
@@ -20,4 +20,4 @@ After magic, there is apex-offset map(this map is the data structure with key-va
 key is the identifer, value is the offet in map file of the apex;  
 the table ends with two int(0).  
 
-After the table, apex structs stores continuously.
+After the table, apex structs are stored continuously.
