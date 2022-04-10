@@ -1,13 +1,12 @@
 import math
 import pygame as pg
 
-import source as src
 import vector
 
 # 角色类
 
 
-class character:
+class Character:
     direct = [0.0, -1.0]  # 角色行走的方向向量
     v = 0  # 行走速度
 
@@ -26,6 +25,7 @@ class character:
 
     # 绘制脚印
     def draw_feet(self, win: pg.Surface):
+        # 这个是临时的
         pg.draw.aaline(win, [255, 255, 255], [win.get_width() / 2, win.get_height() / 2],
                        vector.v_add([win.get_width() / 2, win.get_height() / 2], vector.get_v(self.direct, self.v)), 3)
 

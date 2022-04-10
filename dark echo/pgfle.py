@@ -1,9 +1,9 @@
-'''
+"""
 pygame flow engine
 pygame流引擎
 这个引擎用刷新流类使pygame中surface的刷新与计算分离
-'''
-from cProfile import run
+"""
+
 from pickle import STOP
 import pygame as pg
 import threading
@@ -44,7 +44,7 @@ class Flow:  # 刷新流
         self.evelist = evelist  # 检测的事件handler表
         self.state = self.STOP  # 设置状态为STOP
     
-    def get_mouse(self):
+    def getMouse(self):
         return self.mousep
 
     # 刷新流的执行函数
