@@ -9,7 +9,7 @@ import pygame as pg
 import threading
 
 
-class eveHandle:  # 事件handler
+class EveHandle:  # 事件handler
     def __init__(self, event_t, handle) -> None:
         self.event_t = event_t
         self.handle = handle
@@ -25,7 +25,7 @@ def dummy_terminate():
     pass
 
 
-class flow:  # 刷新流
+class Flow:  # 刷新流
 
     # states
     STOP = 0
@@ -37,7 +37,7 @@ class flow:  # 刷新流
 
     # 参数func一定是一个返回布尔值的函数
     # 最后不定参指定要检测的事件以及事件的handler
-    def __init__(self, fps: int, func, terminatefunc=dummy_terminate, *evelist: eveHandle) -> None:
+    def __init__(self, fps: int, func, terminatefunc=dummy_terminate, *evelist: EveHandle) -> None:
         self.fps = fps  # 帧率
         self.func = func  # 刷新函数
         self.terminatefunc = terminatefunc  # 退出函数
