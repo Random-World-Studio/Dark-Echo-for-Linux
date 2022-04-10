@@ -6,8 +6,8 @@ Map file consists of apex structs.
 The maps must ensure that all the apexes will enclose some closed figures.
 the struct has members as follows:
 1. identifer : int
-2. coordinate : `\[float, float\]`
-3. adjactApex : `\[int, int\]`  
+2. coordinate : `[float, float]`
+3. adjactApex : `[int, int]`  
     adjactApex[0] is the last apex' identifer, sdjact[1] is the next apex's identifer
 4. arcEnable : `bool`  
     this enables items 5 6 and 7
