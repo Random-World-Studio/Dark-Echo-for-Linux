@@ -13,7 +13,7 @@ the struct has members as follows:
     this enables items 5 6 and 7
 5. center : `float`
 6. radius : `float`
-7. radian : 'float'
+7. radian : `float`
 
 In map files, the first 8 bits is magic number 0x4f7102a7d5004c4f.  
 After magic, there is apex-offset map(this map is the data structure with key-value pair);  
